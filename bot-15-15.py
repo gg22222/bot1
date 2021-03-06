@@ -80,13 +80,13 @@ def moglyv_stud(update, context):
     update.callback_query.message.reply_text('У нас є багато цікавих можливостей для студентів. З чого почнемо?  ',reply_markup = reply2)
 def umovy_vstypy(update, context):
     
-kb_umovy = [ [InlineKeyboardButton("Конкурсні предмети ЗНО", callback_data = "")], 
+    kb_umovy = [ [InlineKeyboardButton("Конкурсні предмети ЗНО", callback_data = "")], 
             [InlineKeyboardButton("Розрахунок конкурсного балу", callback_data = "")], 
             [InlineKeyboardButton("Етапи вступної кампанії", callback_data = "")], 
             [InlineKeyboardButton("Корисні посилання", callback_data = "")], 
             [InlineKeyboardButton("Кількість бюджетних та контрактних місць для вступників", callback_data = "")], ] 
-reply = InlineKeyboardMarkup(kb_umovy)   
-update.callback_query.message.reply_text('Обери підпункт, який тобі цікавиий ', reply_markup = reply)
+    reply = InlineKeyboardMarkup(kb_umovy)   
+    update.callback_query.message.reply_text('Обери підпункт, який тобі цікавиий ', reply_markup = reply)
 def vikladachi(update, context):
     update.callback_query.message.reply_text('')
 def principi(update, context):
