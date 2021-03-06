@@ -98,6 +98,17 @@ def auditoryua(update, context):
 def vipuskniki(update, context):
     update.callback_query.message.reply_text('')
     
+def konkursni_predmet (update, context):
+    update.callback_query.message.reply_text('')
+def rozrahynok (update, context):
+    update.callback_query.message.reply_text('')
+def etapi (update, context):
+    update.callback_query.message.reply_text('')
+def konkursni_posilania (update, context):
+    update.callback_query.message.reply_text('')
+def mist_dlia_vstypnukiv (update, context):
+    update.callback_query.message.reply_text('')
+
 def main():
 
     updater = Updater("1622026876:AAGSPO1cWixVtEb0Zw8PKJxNa-KfQUh7818", use_context=True)
@@ -116,6 +127,12 @@ def main():
     dp.add_handler(CallbackQueryHandler(auditoryua , pattern = "auditoryua"))
     dp.add_handler(CallbackQueryHandler(vipuskniki , pattern = "vipuskniki"))
 
+    dp.add_handler(CallbackQueryHandler(конкурсні предмет зно, pattern = 'konkursni_predmet'))
+    dp.add_handler(CallbackQueryHandler(розрахунок конкурсного балу, pattern = 'rozrahynok'))
+    dp.add_handler(CallbackQueryHandler(етапи вступної кампанії, pattern = 'etapi'))
+    dp.add_handler(CallbackQueryHandler(конкурсні посилання, pattern = 'konkursni_posilania'))
+    dp.add_handler(CallbackQueryHandler(кількість бюджетних та конкратних місць для вступників, pattern = 'mist_dlia_vstypnukiv'))
+    
     dp.add_handler(MessageHandler(Filters.text, echo))
 
 
