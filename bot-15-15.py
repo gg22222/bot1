@@ -127,11 +127,11 @@ def main():
     dp.add_handler(CallbackQueryHandler(auditoryua , pattern = "auditoryua"))
     dp.add_handler(CallbackQueryHandler(vipuskniki , pattern = "vipuskniki"))
 
-    dp.add_handler(CallbackQueryHandler(конкурсні предмет зно, pattern = 'konkursni_predmet'))
-    dp.add_handler(CallbackQueryHandler(розрахунок конкурсного балу, pattern = 'rozrahynok'))
-    dp.add_handler(CallbackQueryHandler(етапи вступної кампанії, pattern = 'etapi'))
-    dp.add_handler(CallbackQueryHandler(конкурсні посилання, pattern = 'konkursni_posilania'))
-    dp.add_handler(CallbackQueryHandler(кількість бюджетних та конкратних місць для вступників, pattern = 'mist_dlia_vstypnukiv'))
+    dp.add_handler(CallbackQueryHandler(konkursni_predmet, pattern = 'konkursni_predmet'))
+    dp.add_handler(CallbackQueryHandler(rozrahynok, pattern = 'rozrahynok'))
+    dp.add_handler(CallbackQueryHandler(etapi, pattern = 'etapi'))
+    dp.add_handler(CallbackQueryHandler(konkursni_posilania, pattern = 'konkursni_posilania'))
+    dp.add_handler(CallbackQueryHandler(mist_dlia_vstypnukiv, pattern = 'mist_dlia_vstypnukiv'))
     
     dp.add_handler(MessageHandler(Filters.text, echo))
 
