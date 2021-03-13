@@ -113,6 +113,7 @@ def vipuskniki(update, context):
     
 def konkursni_predmet (update, context):
     update.callback_query.message.reply_text('')
+    update.callback_query.message.reply_text(content, parse_mode='Markdown')
 def rozrahynok (update, context):
     content = read_content_from_url('rozrahunok.txt')
     update.callback_query.message.reply_text(content, parse_mode="Markdown")
@@ -121,8 +122,10 @@ def etapi (update, context):
     update.callback_query.message.reply_text(content, parse_mode="Markdown")
 def konkursni_posilania (update, context):
     update.callback_query.message.reply_text('')
+    update.callback_query.message.reply_text(content, parse_mode='Markdown')
 def mist_dlia_vstypnukiv (update, context):
     update.callback_query.message.reply_text('')
+    update.callback_query.message.reply_text(content, parse_mode='Markdown')
 #by nexzist2k
 def konkursniPredmetyZNO(update, context):
     content = read_content_from_url('konkursniPredemtyZNO.txt')
