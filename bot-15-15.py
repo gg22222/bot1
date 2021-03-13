@@ -99,6 +99,7 @@ def vikladachi(update, context):
     
 def principi(update, context):
     update.callback_query.message.reply_text('')
+    update.callback_query.message.reply_text(content, parse_mode='Markdown')
 def istoriyaKafedry(update, context):
     content = read_content_from_url('istoriyaKafedry.txt')
     update.callback_query.message.reply_text(content, parse_mode='Markdown')
