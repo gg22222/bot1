@@ -147,6 +147,9 @@ def main():
     dp.add_handler(CallbackQueryHandler(kafedra_KMAD, pattern = 'kafedra_KMAD'))
     dp.add_handler(CallbackQueryHandler(moglyv_stud, pattern = 'moglyv_stud'))
     dp.add_handler(CallbackQueryHandler(umovy_vstypy, pattern = 'umovy_vstypy'))
+    dp.add_handler(CallbackQueryHandler(praktika, pattern = 'praktika'))
+    dp.add_handler(CallbackQueryHandler(prazewvlashtuvannya, pattern = 'prazewvlashtuvannya'))
+    dp.add_handler(CallbackQueryHandler(dualna_osvita, pattern = 'dualna_osvita'))
     
     dp.add_handler(CallbackQueryHandler(vikladachi , pattern = "vikladachi"))
     dp.add_handler(CallbackQueryHandler(principi , pattern = "principi"))
