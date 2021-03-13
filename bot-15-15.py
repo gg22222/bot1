@@ -74,6 +74,7 @@ def kafedra_KMAD(update, context):
     #update.callback_query.message.bot.send_photo(chat_id =update.callback_query.message.chat.id , photo = url_photo)
     #update.callback_query.message.bot.send_photo(chat_id = 763174940 , photo = url_photo)
     update.callback_query.message.reply_photo(url_photo)
+
 def moglyv_stud(update, context):
     update.callback_query.message.reply_text('У нас є багато цікавих можливостей для студентів. З чого почнемо?  ')
     kb_moglyv_stud=[[InlineKeyboardButton("Проєктне навчання(в сториз“проєкти”)",callback_data = "")],
@@ -83,6 +84,7 @@ def moglyv_stud(update, context):
 ]
     reply2 = InlineKeyboardMarkup(kb_moglyv_stud)
     update.callback_query.message.reply_text('У нас є багато цікавих можливостей для студентів. З чого почнемо?  ',reply_markup = reply2)
+
 def umovy_vstypy(update, context):
     
     kb_umovy = [ [InlineKeyboardButton("Конкурсні предмети ЗНО", callback_data = "")], 
@@ -92,6 +94,8 @@ def umovy_vstypy(update, context):
             [InlineKeyboardButton("Кількість бюджетних та контрактних місць для вступників", callback_data = "")], ] 
     reply = InlineKeyboardMarkup(kb_umovy)   
     update.callback_query.message.reply_text('Обери підпункт, який тобі цікавиий ', reply_markup = reply)
+
+#-----------    block kafedra----------------------------------------------------
     
 def vikladachi(update, context):
     content = read_content_from_url('vikladachi.txt')
@@ -100,6 +104,7 @@ def vikladachi(update, context):
 def principi(update, context):
     update.callback_query.message.reply_text('')
     update.callback_query.message.reply_text(content, parse_mode='Markdown')
+    
 def istoriyaKafedry(update, context):
     content = read_content_from_url('istoriyaKafedry.txt')
     update.callback_query.message.reply_text(content, parse_mode='Markdown')
@@ -111,29 +116,38 @@ def auditoryua(update, context):
 def vipuskniki(update, context):
     update.callback_query.message.reply_text('')
     update.callback_query.message.reply_text(content, parse_mode='Markdown')
-    
-def konkursni_predmet (update, context):
-    update.callback_query.message.reply_text('')
-    update.callback_query.message.reply_text(content, parse_mode='Markdown')
-def rozrahynok (update, context):
-    content = read_content_from_url('rozrahunok.txt')
-    update.callback_query.message.reply_text(content, parse_mode="Markdown")
-def etapi (update, context):
-    content = read_content_from_url('etapi.txt')
-    update.callback_query.message.reply_text(content, parse_mode="Markdown")
-def konkursni_posilania (update, context):
-    update.callback_query.message.reply_text('')
-    update.callback_query.message.reply_text(content, parse_mode='Markdown')
-def mist_dlia_vstypnukiv (update, context):
-    update.callback_query.message.reply_text('')
-    update.callback_query.message.reply_text(content, parse_mode='Markdown')
-#by nexzist2k
-def konkursniPredmetyZNO(update, context):
-    content = read_content_from_url('konkursniPredemtyZNO.txt')
-    update.callback_query.message.reply_text(content, parse_mode="Markdown")
+#-----------    end block kafedra----------------------------------------------------
+
+#-----------     block mozluvocti----------------------------------------------------
 def praktika(update, context):
     content = read_content_from_url('praktika.txt')
     update.callback_query.message.reply_text(content, parse_mode="Markdown")
+    
+#-----------   end  block mozluvocti----------------------------------------------------
+
+#-----------     block umovy----------------------------------------------------
+def konkursniPredmetyZNO(update, context):
+    content = read_content_from_url('konkursniPredemtyZNO.txt')
+    update.callback_query.message.reply_text(content, parse_mode="Markdown")
+    
+def rozrahynok (update, context):
+    content = read_content_from_url('rozrahunok.txt')
+    update.callback_query.message.reply_text(content, parse_mode="Markdown")
+    
+def etapi (update, context):
+    content = read_content_from_url('etapi.txt')
+    update.callback_query.message.reply_text(content, parse_mode="Markdown")
+    
+def konkursni_posilania (update, context):
+    update.callback_query.message.reply_text('')
+    update.callback_query.message.reply_text(content, parse_mode='Markdown')
+    
+def mist_dlia_vstypnukiv (update, context):
+    update.callback_query.message.reply_text('')
+    update.callback_query.message.reply_text(content, parse_mode='Markdown')
+
+#-----------  end  block umovy----------------------------------------------------
+
 #///
 
 def main():
@@ -144,19 +158,22 @@ def main():
 
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("help", help))
+    
     dp.add_handler(CallbackQueryHandler(kafedra_KMAD, pattern = 'kafedra_KMAD'))
     dp.add_handler(CallbackQueryHandler(moglyv_stud, pattern = 'moglyv_stud'))
     dp.add_handler(CallbackQueryHandler(umovy_vstypy, pattern = 'umovy_vstypy'))
-    dp.add_handler(CallbackQueryHandler(praktika, pattern = 'praktika'))
-    dp.add_handler(CallbackQueryHandler(prazewvlashtuvannya, pattern = 'prazewvlashtuvannya'))
-    dp.add_handler(CallbackQueryHandler(dualna_osvita, pattern = 'dualna_osvita'))
     
     dp.add_handler(CallbackQueryHandler(vikladachi , pattern = "vikladachi"))
     dp.add_handler(CallbackQueryHandler(principi , pattern = "principi"))
     dp.add_handler(CallbackQueryHandler(istoriyaKafedry , pattern = "istoriyaKafedry"))
     dp.add_handler(CallbackQueryHandler(auditoryua , pattern = "auditoryua"))
     dp.add_handler(CallbackQueryHandler(vipuskniki , pattern = "vipuskniki"))
-
+    
+    
+    dp.add_handler(CallbackQueryHandler(dualna_osvita, pattern = 'dualna_osvita'))
+    dp.add_handler(CallbackQueryHandler(prazewvlashtuvannya, pattern = 'prazewvlashtuvannya'))
+    dp.add_handler(CallbackQueryHandler(praktika, pattern = 'praktika'))
+    
     dp.add_handler(CallbackQueryHandler(konkursni_predmet, pattern = 'konkursni_predmet'))
     dp.add_handler(CallbackQueryHandler(rozrahynok, pattern = 'rozrahynok'))
     dp.add_handler(CallbackQueryHandler(etapi, pattern = 'etapi'))
