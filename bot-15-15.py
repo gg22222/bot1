@@ -109,6 +109,7 @@ def auditoryua(update, context):
     
 def vipuskniki(update, context):
     update.callback_query.message.reply_text('')
+    update.callback_query.message.reply_text(content, parse_mode='Markdown')
     
 def konkursni_predmet (update, context):
     update.callback_query.message.reply_text('')
