@@ -120,7 +120,7 @@ def vipuskniki(update, context):
 
 #-----------     block mozluvocti----------------------------------------------------
 def proektne_navchannya(update, context):
-    content = read_content_from_url('praktika.txt')
+    content = read_content_from_url('proektne_navchannya.txt')
     update.callback_query.message.reply_text(content, parse_mode="Markdown")
 def praktika(update, context):
     content = read_content_from_url('praktika.txt')
