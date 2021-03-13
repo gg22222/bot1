@@ -119,6 +119,9 @@ def vipuskniki(update, context):
 #-----------    end block kafedra----------------------------------------------------
 
 #-----------     block mozluvocti----------------------------------------------------
+def proektne_navchannya(update, context):
+    content = read_content_from_url('praktika.txt')
+    update.callback_query.message.reply_text(content, parse_mode="Markdown")
 def praktika(update, context):
     content = read_content_from_url('praktika.txt')
     update.callback_query.message.reply_text(content, parse_mode="Markdown")
