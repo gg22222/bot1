@@ -102,9 +102,11 @@ def principi(update, context):
 def istoriyaKafedry(update, context):
     content = read_content_from_url('istoriyaKafedry.txt')
     update.callback_query.message.reply_text(content, parse_mode='Markdown')
+    
 def auditoryua(update, context):
     content = read_content_from_url('auditoryua.txt')
     update.callback_query.message.reply_text(content, parse_mode='Markdown')
+    
 def vipuskniki(update, context):
     update.callback_query.message.reply_text('')
     
