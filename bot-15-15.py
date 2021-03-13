@@ -16,16 +16,21 @@ bot.
 import logging
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Updater, CommandHandler, MessageHandler, CallbackQueryHandler, Filters
+import urllib.request
 
+LINK = 'https://ulkabo.github.io/bot-15-15/data/'
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 
 logger = logging.getLogger(__name__)
 
+def read_content_from_url(file):
+  url = LINK + file
+  f = urllib.request.urlopen(url)
+  text = f.read().decode(encoding = 'utf-8')
+  return text
 
-# Define a few command handlers. These usually take the two arguments update and
-# context. Error handlers also receive the raised TelegramError object in error.
 def start(update, context):
     """Send a message when the command /start is issued."""
     kb_start = [
@@ -87,8 +92,11 @@ def umovy_vstypy(update, context):
             [InlineKeyboardButton("Кількість бюджетних та контрактних місць для вступників", callback_data = "")], ] 
     reply = InlineKeyboardMarkup(kb_umovy)   
     update.callback_query.message.reply_text('Обери підпункт, який тобі цікавиий ', reply_markup = reply)
+    
 def vikladachi(update, context):
-    update.callback_query.message.reply_text('')
+    content = read_content_from_url('vikladachi.txt')
+    update.callback_query.message.reply_text(content, parse_mode="Markdown")
+    
 def principi(update, context):
     update.callback_query.message.reply_text('')
 def istoriyaKafedry(update, context):
