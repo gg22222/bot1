@@ -136,7 +136,7 @@ def konkursniPredmetyZNO(update, context):
     content = read_content_from_url('konkursniPredemtyZNO.txt')
     update.callback_query.message.reply_text(content, parse_mode="Markdown")
     
-def rozrahynok (update, context):
+def rozrahunok (update, context):
     content = read_content_from_url('rozrahunok.txt')
     update.callback_query.message.reply_text(content, parse_mode="Markdown")
     
@@ -183,7 +183,7 @@ def main():
     
     
     dp.add_handler(CallbackQueryHandler(konkursni_predmet, pattern = 'konkursni_predmet'))
-    dp.add_handler(CallbackQueryHandler(rozrahynok, pattern = 'rozrahynok'))
+    dp.add_handler(CallbackQueryHandler(rozrahynok, pattern = 'rozrahunok'))
     dp.add_handler(CallbackQueryHandler(etapi, pattern = 'etapi'))
     dp.add_handler(CallbackQueryHandler(konkursni_posilania, pattern = 'konkursni_posilania'))
     dp.add_handler(CallbackQueryHandler(mist_dlia_vstypnukiv, pattern = 'mist_dlia_vstypnukiv'))
