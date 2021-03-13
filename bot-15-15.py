@@ -114,7 +114,8 @@ def rozrahynok (update, context):
     content = read_content_from_url('rozrahunok.txt')
     update.callback_query.message.reply_text(content, parse_mode="Markdown")
 def etapi (update, context):
-    update.callback_query.message.reply_text('')
+    content = read_content_from_url('etapi.txt')
+    update.callback_query.message.reply_text(content, parse_mode="Markdown")
 def konkursni_posilania (update, context):
     update.callback_query.message.reply_text('')
 def mist_dlia_vstypnukiv (update, context):
