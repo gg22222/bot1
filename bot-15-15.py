@@ -77,10 +77,10 @@ def kafedra_KMAD(update, context):
 
 def moglyv_stud(update, context):
     update.callback_query.message.reply_text('У нас є багато цікавих можливостей для студентів. З чого почнемо?  ')
-    kb_moglyv_stud=[[InlineKeyboardButton("Проєктне навчання(в сториз“проєкти”)",callback_data = "")],
-                             [InlineKeyboardButton("Дуальна освіта",callback_data = "")],
-                             [InlineKeyboardButton("Працевлаштування",callback_data = "")]
-                             [InlineKeyboardButton("Практика",callback_data = "")]
+    kb_moglyv_stud=[[InlineKeyboardButton("Проєктне навчання(в сториз“проєкти”)",callback_data = "proektne_navchanya")],
+                             [InlineKeyboardButton("Дуальна освіта",callback_data = "dualna_osvita")],
+                             [InlineKeyboardButton("Працевлаштування",callback_data = "prazewvlashtuvannya")]
+                             [InlineKeyboardButton("Практика",callback_data = "praktika")]
 ]
     reply2 = InlineKeyboardMarkup(kb_moglyv_stud)
     update.callback_query.message.reply_text('У нас є багато цікавих можливостей для студентів. З чого почнемо?  ',reply_markup = reply2)
