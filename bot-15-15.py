@@ -186,7 +186,7 @@ def main():
     
     
     dp.add_handler(CallbackQueryHandler(konkursni_predmet, pattern = 'konkursni_predmet'))
-    dp.add_handler(CallbackQueryHandler(rozrahynok, pattern = 'rozrahunok'))
+    dp.add_handler(CallbackQueryHandler(rozrahunok, pattern = 'rozrahunok'))
     dp.add_handler(CallbackQueryHandler(etapi, pattern = 'etapi'))
     dp.add_handler(CallbackQueryHandler(konkursni_posilania, pattern = 'konkursni_posilania'))
     dp.add_handler(CallbackQueryHandler(mist_dlia_vstypnukiv, pattern = 'mist_dlia_vstypnukiv'))
