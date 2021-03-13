@@ -87,11 +87,11 @@ def moglyv_stud(update, context):
 
 def umovy_vstypy(update, context):
     
-    kb_umovy = [ [InlineKeyboardButton("Конкурсні предмети ЗНО", callback_data = "")], 
-            [InlineKeyboardButton("Розрахунок конкурсного балу", callback_data = "")], 
-            [InlineKeyboardButton("Етапи вступної кампанії", callback_data = "")], 
-            [InlineKeyboardButton("Корисні посилання", callback_data = "")], 
-            [InlineKeyboardButton("Кількість бюджетних та контрактних місць для вступників", callback_data = "")], ] 
+    kb_umovy = [ [InlineKeyboardButton("Конкурсні предмети ЗНО", callback_data = "konkursniPredmetyZN")], 
+            [InlineKeyboardButton("Розрахунок конкурсного балу", callback_data = "rozrahunok")], 
+            [InlineKeyboardButton("Етапи вступної кампанії", callback_data = "etapi")], 
+            [InlineKeyboardButton("Корисні посилання", callback_data = "konkursni_posilania")], 
+            [InlineKeyboardButton("Кількість бюджетних та контрактних місць для вступників", callback_data = "mist_dlia_vstypnukiv")], ] 
     reply = InlineKeyboardMarkup(kb_umovy)   
     update.callback_query.message.reply_text('Обери підпункт, який тобі цікавиий ', reply_markup = reply)
 
@@ -120,7 +120,7 @@ def vipuskniki(update, context):
 
 #-----------     block mozluvocti----------------------------------------------------
 def proektne_navchannya(update, context):
-    content = read_content_from_url('proektne_navchannya.txt')
+    content = read_content_from_url('praktika.txt')
     update.callback_query.message.reply_text(content, parse_mode="Markdown")
 def praktika(update, context):
     content = read_content_from_url('praktika.txt')
@@ -185,8 +185,8 @@ def main():
     dp.add_handler(CallbackQueryHandler(proektne_navchanya, pattern = 'proektne_navchanya'))
     
     
-    dp.add_handler(CallbackQueryHandler(konkursni_predmet, pattern = 'konkursni_predmet'))
-    dp.add_handler(CallbackQueryHandler(rozrahunok, pattern = 'rozrahunok'))
+    dp.add_handler(CallbackQueryHandler(konkursniPredmetyZNt, pattern = 'konkursniPredmetyZN'))
+    dp.add_handler(CallbackQueryHandler(rozrahynok, pattern = 'rozrahunok'))
     dp.add_handler(CallbackQueryHandler(etapi, pattern = 'etapi'))
     dp.add_handler(CallbackQueryHandler(konkursni_posilania, pattern = 'konkursni_posilania'))
     dp.add_handler(CallbackQueryHandler(mist_dlia_vstypnukiv, pattern = 'mist_dlia_vstypnukiv'))
