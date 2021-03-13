@@ -122,6 +122,12 @@ def vipuskniki(update, context):
 def praktika(update, context):
     content = read_content_from_url('praktika.txt')
     update.callback_query.message.reply_text(content, parse_mode="Markdown")
+def dualna_osvita(update, context):
+    content = read_content_from_url('dualnaosvita.txt')
+    update.callback_query.message.reply_text(content, parse_mode="Markdown")
+def prazewvlashtuvannya(update, context):
+    content = read_content_from_url('prazewvlashtuvannya.txt')
+    update.callback_query.message.reply_text(content, parse_mode="Markdown")
     
 #-----------   end  block mozluvocti----------------------------------------------------
 
@@ -173,6 +179,8 @@ def main():
     dp.add_handler(CallbackQueryHandler(dualna_osvita, pattern = 'dualna_osvita'))
     dp.add_handler(CallbackQueryHandler(prazewvlashtuvannya, pattern = 'prazewvlashtuvannya'))
     dp.add_handler(CallbackQueryHandler(praktika, pattern = 'praktika'))
+    dp.add_handler(CallbackQueryHandler(proektne_navchanya, pattern = 'proektne_navchanya'))
+    
     
     dp.add_handler(CallbackQueryHandler(konkursni_predmet, pattern = 'konkursni_predmet'))
     dp.add_handler(CallbackQueryHandler(rozrahynok, pattern = 'rozrahynok'))
