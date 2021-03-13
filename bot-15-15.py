@@ -111,7 +111,8 @@ def vipuskniki(update, context):
 def konkursni_predmet (update, context):
     update.callback_query.message.reply_text('')
 def rozrahynok (update, context):
-    update.callback_query.message.reply_text('')
+    content = read_content_from_url('rozrahunok.txt')
+    update.callback_query.message.reply_text(content, parse_mode="Markdown")
 def etapi (update, context):
     update.callback_query.message.reply_text('')
 def konkursni_posilania (update, context):
