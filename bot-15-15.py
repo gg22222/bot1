@@ -122,13 +122,14 @@ def konkursni_posilania (update, context):
     update.callback_query.message.reply_text('')
 def mist_dlia_vstypnukiv (update, context):
     update.callback_query.message.reply_text('')
+#by nexzist2k
 def konkursniPredmetyZNO(update, context):
     content = read_content_from_url('konkursniPredemtyZNO.txt')
     update.callback_query.message.reply_text(content, parse_mode="Markdown")
 def praktika(update, context):
     content = read_content_from_url('praktika.txt')
     update.callback_query.message.reply_text(content, parse_mode="Markdown")
-
+#///
 
 def main():
 
