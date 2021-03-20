@@ -161,7 +161,7 @@ def mist_dlia_vstypnukiv (update, context):
 
 def main():
 
-    updater = Updater("1622026876:AAGSPO1cWixVtEb0Zw8PKJxNa-KfQUh7818", use_context=True)
+    updater = Updater("1693860203:AAGRtAxIRCmzQaLBR8zH1jHl3uzVBsXUT8M", use_context=True)
 
     dp = updater.dispatcher
 
